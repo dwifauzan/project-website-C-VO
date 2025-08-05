@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Background</title>
+  <style>
+    /* Make the video cover the whole screen */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop class="video-background">
+    <source src="D:\EN6\WEB\Resource\Hujan 3K RGB gen 1_720p.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Foreground Content -->
+  <div class="content">
+    <h1>Welcome to My Website</h1>
+    <p>This has a full-screen video background.</p>
+  </div>
+
+</body>
+</html>
