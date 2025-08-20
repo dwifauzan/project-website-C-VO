@@ -1,147 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Video Background Scroll Transition</title>
-  <style>
-    /* Reset dan tampilan umum */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    /* Video background */
-    .video-background {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      z-index: -2;
-      transition: opacity 1s ease;
-    }
-
-    /* Overlay putih saat scroll */
-    .background-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      opacity: 0;
-      z-index: -1;
-      transition: opacity 1s ease;
-    }
-
-    .overlay-visible .background-overlay {
-      opacity: 1;
-    }
-
-    .overlay-visible .video-background {
-      opacity: 0;
-    }
-
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 15px 0;
-      display: flex;
-      justify-content: center;
-      z-index: 10;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    .menu {
-      display: flex;
-      gap: 30px;
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .menu a:hover {
-      text-decoration: underline;
-    }
-
-    /* Konten */
-    .content {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding-top: 100px;
-      min-height: 100vh;
-    }
-
-    .section {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      font-size: 24px;
-    }
-
-    /* Konten setelah scroll (teks gelap di atas putih) */
-    .section.light {
-      color: black;
-      background-color: white;
-    }
-  </style>
+  <title>Portofolio C-VO Entertaiment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <!-- Background Video -->
-  <video autoplay muted loop class="video-background">
-    <source src="Resource/Hujan 3K RGB gen 1_720p.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
+<body>
+  <!-- body -->
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg z-1 fixed-top" id="main-navbar">
+    <div class="container justify-content-between">
+
+      <a class="navbar-brand fs-2 fw-bold text-white" href="#" id="logo-text-navbar">CCCC Entertaiment</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
+          <li class="nav-item">
+            <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link capitalize text-white" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link capitalize text-white" href="#">Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link capitalize text-white" href="#">Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link capitalize text-white" href="#">Talent</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- hero section -->
+  <div class="container-fluid bg-success" id="hero-section">
+    <video autoplay muted loop class="position-absolute top-0 start-0 w-100 object-fit-cover"
+      style="filter: brightness(5%);">
+      <source src="Resource/Hujan 3K RGB gen 1_720p.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <div class="position-relative z-1 text-white d-flex justify-content-center align-items-center text-center"
+      id="main-content-text">
+      <div>
+        <h1 class="fs-1 fw-bold">Start the Journey from Now</h1>
+        <p class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Putih overlay yang muncul saat scroll -->
   <div class="background-overlay"></div>
 
-  <!-- Navigation Bar -->
-  <div class="navbar">
-    <div class="menu">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </div>
-  </div>
-
-  <!-- Hero Content -->
-  <div class="content">
-    <h1>Welcome to My Website</h1>
-    <p>This has a full-screen video background that transitions to white on scroll.</p>
-  </div>
-
   <!-- Section putih -->
-  <div class="section light">
-    <h2>Now You're Scrolling Into the White Background</h2>
-  </div>
-  <div class="section light">
-    <h2>More Clean Content</h2>
-  </div>
+  <!-- About Us -->
+  <section class="section light h-auto mb-5" id="section-about-us">
+    <div class="container">
+      <h1 class="text-capitalize fs-1 fw-bold">about us</h1>
+      <div class="row mt-5 d-flex align-items-center">
+        <div class="col row">
+          <div class="col">
+            <img class="w-75 rounded-circle" src="https://img.freepik.com/free-photo/plastic-globe-table_23-2147732594.jpg" alt="">
+          </div>
+        </div>
+        <div class="col">
+          <h1 class="fs-2 fw-semibold pb-5">Start Journey C-VO</h1>
+          <p class="fs-5 fw-base pb-5"><b>Lorem ipsum dolor sit amet</b>, consectetur adipisicing elit. Tempora architecto labore consequuntur cumque sequi nulla accusantium porro mollitia voluptatibus deserunt aperiam dolorem natus, totam ipsam!</p>
+
+          <p class="fs-5 fw-base pb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sequi itaque similique possimus amet praesentium reprehenderit minima ipsa.</p>
+
+          <p class="fs-5 fw-base pb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit ipsum atque ab natus earum velit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section light container-fluid" id="section-service">
+    <div class="container justify-content-center align-items-center">
+      <div class="row d-flex align-items-center pt-5">
+        <div class="col">
+          <h1 class="text-white fs-1 fw-bold">Service</h1>
+          <p class="text-whtie fs-5 fw-semibold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet itaque blanditiis at unde iusto recusandae.</p>
+        </div>
+        <div class="col">
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- JavaScript to toggle class -->
-  <script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- <script>
     const body = document.body;
     const triggerHeight = window.innerHeight / 2;
 
@@ -152,7 +135,8 @@
         body.classList.remove('overlay-visible');
       }
     });
-  </script>
+  </script> -->
 
 </body>
+
 </html>
